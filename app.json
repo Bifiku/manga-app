@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "manga-App",
+    "slug": "manga-App",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/splash.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "63529110-1716-4dcf-935a-5657266e472a"
+      }
+    },
+    "owner": "andrey0499",
+    "plugins": [
+      "expo-font",
+      "expo-router"
+    ],
+  "scheme": "manga-app"
+  }
+}
