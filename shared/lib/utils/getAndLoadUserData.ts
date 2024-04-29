@@ -4,7 +4,6 @@ import { UserType } from '../../../app/store/slices/user/user.type';
 export const getUserData = async () => {
 	try {
 		const jsonValue = await AsyncStorage.getItem('user');
-		console.log(jsonValue);
 		return jsonValue !== null ? JSON.parse(jsonValue) : null;
 	} catch (e) {
 		console.log('Error getUserData AsyncStorage: ' + e);

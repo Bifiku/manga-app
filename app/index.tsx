@@ -14,9 +14,9 @@ import {
 	updatedAt as lastUpdate,
 	createdAt as newManga,
 } from './store/slices/categorySlice.slice';
-import { getUserData, x } from '../shared/lib/utils/getAndLoadUserData';
+import { getUserData } from '../shared/lib/utils/getAndLoadUserData';
 import { UserType } from './store/slices/user/user.type';
-import { changeColorTheme } from './store/slices/user/user.slice';
+import { changeColorTheme, changeFavorites, changeName } from './store/slices/user/user.slice';
 import { THEME } from '../shared/theme';
 const Index = () => {
 	const insets = useSafeAreaInsets();
@@ -33,6 +33,8 @@ const Index = () => {
 		const userDataHandler = async () => {
 			const userData: UserType = await getUserData();
 			dispatch(changeColorTheme(userData.colorTheme ? userData.colorTheme : THEME.MAIN_COLOR));
+			dispatch(changeName(userData.name));
+			dispatch(changeFavorites(userData.favorites));
 		};
 		userDataHandler();
 	}, []);

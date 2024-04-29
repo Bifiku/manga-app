@@ -1,44 +1,62 @@
-import React, { useEffect } from 'react';
-import { View, StyleSheet, Image, ActivityIndicator } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { THEME } from '../theme';
 import { useAppDispatch, useAppSelector } from '../../app/hooks/hooks';
 import { fetchData } from '../../app/store/actions/actions';
+import { Link } from 'expo-router';
+import Loader from '../Loader/Loader';
 
 export const BlockWithRandomsMangas = ({ resRandomManga }: { resRandomManga: string }) => {
-	const { data: randomManga } = useAppSelector((state) => state.randomMangaSlice);
+	const { data } = useAppSelector((state) => state.randomMangaSlice);
 	const dispatch = useAppDispatch();
+	const [isLoading, setIsLoading] = useState(false);
 	useEffect(() => {
-		dispatch(
-			fetchData({
-				url: '/manga/random',
-				slice: 'randomManga',
-				params: {
-					includes: ['cover_art', 'manga'],
-				},
-			}),
-		);
+		getData();
 	}, [resRandomManga]);
 
-	if (!randomManga) {
+	const getData = async () => {
+		try {
+			setIsLoading(true);
+			await dispatch(
+				fetchData({
+					url: '/manga/random',
+					slice: 'randomManga',
+					params: {
+						includes: ['cover_art', 'manga'],
+					},
+				}),
+			);
+		} catch (e) {
+			console.log(e);
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
+	if (isLoading || !data) {
 		return (
 			<View style={styles.container}>
-				<ActivityIndicator />
+				<Loader />
 			</View>
 		);
 	}
 
 	return (
-		<View style={styles.container}>
-			<Image
-				style={styles.image}
-				source={{
-					uri: `https://uploads.mangadex.org/covers/${randomManga.data.id}/${
-						randomManga.data.relationships.find((i) => i.type === 'cover_art')?.attributes
-							.fileName ?? ''
-					}`,
-				}}
-			/>
-		</View>
+		<Link push href={{ pathname: '/detail', params: { id: data.data.id } }} asChild>
+			<TouchableOpacity>
+				<View style={styles.container}>
+					<Image
+						style={styles.image}
+						source={{
+							uri: `https://uploads.mangadex.org/covers/${data.data.id}/${
+								data.data.relationships.find((i) => i.type === 'cover_art')?.attributes.fileName ??
+								''
+							}`,
+						}}
+					/>
+				</View>
+			</TouchableOpacity>
+		</Link>
 	);
 };
 

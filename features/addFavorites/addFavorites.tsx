@@ -3,20 +3,24 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { THEME } from '../../shared/theme';
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks/hooks';
-import { changeFavorites } from '../../app/store/slices/user/user.slice';
+import { addFavorites } from '../../app/store/slices/user/user.slice';
+import { setUserData } from '../../shared/lib/utils/getAndLoadUserData';
 
 const AddFavorites = ({ id }: { id?: string }) => {
-	const { favorites } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
 	const [isFavorite, setIsFavorite] = useState(false);
 	const dispatch = useAppDispatch();
 	const addFavoriteHandler = () => {
-		if (id) dispatch(changeFavorites(id));
+		if (id) {
+			dispatch(addFavorites(id));
+			setUserData({ ...user, favorites: [...user.favorites, id] });
+		}
 	};
 
 	useEffect(() => {
-		const checkedId = favorites.find((i: string) => i === id);
+		const checkedId = user.favorites.find((i: string) => i === id);
 		checkedId ? setIsFavorite(true) : setIsFavorite(false);
-	}, [favorites]);
+	}, [user.favorites]);
 
 	return (
 		<TouchableOpacity style={styles.icon} onPress={() => addFavoriteHandler()}>

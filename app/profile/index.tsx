@@ -11,6 +11,7 @@ import AppView from '../../shared/ui/AppView/AppView';
 import ModalChangeColor from '../../widgets/Modals/ModalChangeColor';
 import { changeName } from '../store/slices/user/user.slice';
 import PopUp from '../../widgets/PopUp/PopUP';
+import { setUserData } from '../../shared/lib/utils/getAndLoadUserData';
 
 const Index = () => {
 	const { user } = useAppSelector((state) => state.userSlice);
@@ -22,6 +23,7 @@ const Index = () => {
 
 	useEffect(() => {
 		dispatch(changeName(userName));
+		setUserData({ ...user, name: userName });
 	}, [dispatch, userName]);
 
 	const isErrorHandler = () => {

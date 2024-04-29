@@ -8,6 +8,8 @@ import { THEME } from '../../shared/theme';
 import { useAppSelector } from '../hooks/hooks';
 import { AxiosError } from 'axios';
 import { AppText } from '../../shared/ui/AppTexts/AppText';
+import { UserType } from '../store/slices/user/user.type';
+import { getUserData } from '../../shared/lib/utils/getAndLoadUserData';
 
 type UploadType = {
 	limit: number;
@@ -25,11 +27,13 @@ const Index = () => {
 	const [responseData, setResponseData] = useState<DataChapterManga[] | []>([]);
 	const [upload, setUpload] = useState<UploadType>(initialUpload);
 	const [loading, setLoading] = useState(false);
+
 	const getDataHandler = () => {
 		if (user.favorites.length === 0) return null;
 		try {
 			setLoading(true);
 			const getData = async () => {
+				// const userData: UserType = await getUserData();
 				const response = await getDataManga({
 					url: '/manga',
 					params: {
@@ -113,6 +117,7 @@ const styles = StyleSheet.create({
 	},
 	contentContainer: {
 		gap: 5,
+		paddingBottom: 100,
 	},
 	item: {
 		marginVertical: 8, // Отступ между карточками
