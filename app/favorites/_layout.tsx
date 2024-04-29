@@ -1,14 +1,15 @@
 import { Slot } from 'expo-router';
-import React from 'react';
-import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import HeaderList from '../../widgets/headers/Header';
 import { StatusBar } from 'expo-status-bar';
-export default function listMangas() {
+import React from 'react';
+import Header from '../../widgets/headers/Header';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
+
+export default function Favorites() {
 	return (
 		<SafeAreaView style={styles.container} edges={['top', 'right', 'left']}>
 			<StatusBar style="light" />
-			<HeaderList title="Manga list" />
+			<Header title="Favorites" />
 			<Slot />
 		</SafeAreaView>
 	);

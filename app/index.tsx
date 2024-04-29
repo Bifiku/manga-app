@@ -1,11 +1,10 @@
-import { View, StyleSheet, ScrollView, RefreshControl, ActivityIndicator } from 'react-native';
+import { View, StyleSheet, ScrollView, RefreshControl } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/hooks';
 import { fetchData } from './store/actions/actions';
 import { Header } from '../shared/Header/Header';
 import PopularManga from '../entities/PopularManga/PopularManga';
 import { Sector } from '../shared/Sector/Sector';
-import { THEME } from '../shared/theme';
 import { BlockMangas } from '../shared/BlockMangas/BlockMangas';
 import { BlockWithRandomsMangas } from '../shared/BlockWithRandomsMangas/BlockWithRandomsMangas';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -24,6 +23,7 @@ const Index = () => {
 	const { data: relevanceMangas } = useAppSelector((state) => state.relevanceMangaSlice);
 	const { data: updatedAt } = useAppSelector((state) => state.updatedAtSlice);
 	const { data: createdAt } = useAppSelector((state) => state.createdAtSlice);
+	const { name, favorites, colorTheme } = useAppSelector((state) => state.userSlice);
 	const fetchDataAndUpdate = async () => {
 		try {
 			setRefreshing(true);
@@ -122,7 +122,7 @@ const Index = () => {
 						refreshControl={
 							<RefreshControl
 								refreshing={refreshing}
-								tintColor={THEME.MAIN_COLOR}
+								tintColor={colorTheme}
 								onRefresh={fetchDataAndUpdate}
 							/>
 						}

@@ -14,9 +14,11 @@ import { DataChapterManga, ResponseChapterManga } from '../../shared/types/getCh
 import Chapter from '../../entities/Chapter/Chapter';
 import Loader from '../../shared/Loader/Loader';
 import { useAppSelector } from '../hooks/hooks';
+import Hud from '../../widgets/HUD/HUD';
 const DetailPage = () => {
 	const { height, width } = useWindowDimensions();
 	const { contentRating } = useAppSelector((state) => state.categorySlice);
+	const { colorTheme } = useAppSelector((state) => state.userSlice);
 	const { id, image } = useLocalSearchParams<{ id: string; image: string }>();
 	const [manga, setManga] = useState<MangaType | null>(null);
 	const [rating, setRating] = useState<number | null>(null);
@@ -79,6 +81,7 @@ const DetailPage = () => {
 
 	return (
 		<>
+			<Hud id={id} />
 			<ScrollView contentContainerStyle={styles.container} bounces={false}>
 				<View style={{ ...styles.imageContainer, height: height * 0.5 }}>
 					{image ? (
@@ -136,7 +139,7 @@ const DetailPage = () => {
 					</View>
 					<TouchableOpacity
 						activeOpacity={0.8}
-						style={styles.arrowButton}
+						style={{ ...styles.arrowButton, backgroundColor: colorTheme }}
 						onPress={visibleFullInfo}
 					>
 						<MotiView
@@ -236,7 +239,6 @@ const styles = StyleSheet.create({
 		width: 48,
 		height: 48,
 		borderRadius: 100,
-		backgroundColor: THEME.MAIN_COLOR,
 		justifyContent: 'center',
 		alignItems: 'center',
 	},

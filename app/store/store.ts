@@ -7,6 +7,7 @@ import createdAtSlice from './slices/createdAtSlice';
 import randomMangaSlice from './slices/randomMangaSlice';
 import chapterStateSlice from './slices/chapterState.slice';
 import categorySlice from './slices/categorySlice.slice';
+import userSlice from './slices/user/user.slice';
 
 // Создаем хранилище
 export const store = configureStore({
@@ -19,6 +20,7 @@ export const store = configureStore({
 		randomMangaSlice,
 		chapterStateSlice,
 		categorySlice,
+		userSlice,
 	},
 });
 

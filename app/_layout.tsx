@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import { SplashScreen, Stack, usePathname, useRouter } from 'expo-router';
+import { SplashScreen, Stack, usePathname } from 'expo-router';
 import { useFonts } from 'expo-font';
 import { THEME } from '../shared/theme';
 import { StatusBar } from 'expo-status-bar';
@@ -50,6 +50,8 @@ export default function AppLayout() {
 					<Stack.Screen name="detail" />
 					<Stack.Screen name="chapter" />
 					<Stack.Screen name="listMangas" />
+					<Stack.Screen name="favorites" />
+					<Stack.Screen name="profile" />
 				</Stack>
 			</SafeAreaProvider>
 			{pathname !== '/chapter' && <Menu />}

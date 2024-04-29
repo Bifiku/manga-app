@@ -16,6 +16,7 @@ import {
 	updatedAt,
 } from '../../app/store/slices/categorySlice.slice';
 import { useState } from 'react';
+import { useAppSelector } from '../../app/hooks/hooks';
 
 const Category = ({ style }: { style?: ViewStyle }) => {
 	const orderArray = [relevance, createdAt, updatedAt, rating];

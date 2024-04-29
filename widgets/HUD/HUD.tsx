@@ -1,12 +1,12 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Pressable } from 'expo-router/build/views/Pressable';
-import { Feather, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Feather, Ionicons } from '@expo/vector-icons';
 import { THEME } from '../../shared/theme';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
+import AddFavorites from '../../features/addFavorites/addFavorites';
 
-const Hud = () => {
+const Hud = ({ id }: { id?: string }) => {
 	const route = useRouter();
 
 	return (
@@ -15,9 +15,7 @@ const Hud = () => {
 				<Ionicons name="arrow-back-outline" size={24} color={THEME.TEXT_COLOR} />
 			</TouchableOpacity>
 			<View style={styles.groupIcons}>
-				<TouchableOpacity style={styles.icon}>
-					<MaterialIcons name="favorite-outline" size={24} color={THEME.TEXT_COLOR} />
-				</TouchableOpacity>
+				<AddFavorites id={id} />
 				<TouchableOpacity style={styles.icon}>
 					<Feather name="share-2" size={24} color={THEME.TEXT_COLOR} />
 				</TouchableOpacity>

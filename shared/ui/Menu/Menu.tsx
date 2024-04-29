@@ -2,30 +2,35 @@ import { View, StyleSheet, useWindowDimensions, TouchableOpacity } from 'react-n
 import { DIMENSIONS, THEME } from '../../theme';
 import { Feather, MaterialIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
-import { Pressable } from 'expo-router/build/views/Pressable';
+import AppView from '../AppView/AppView';
+import { useAppSelector } from '../../../app/hooks/hooks';
 
 const widthMenu = 300;
 
 export const Menu = () => {
 	const { width } = useWindowDimensions();
+	const { colorTheme } = useAppSelector((state) => state.userSlice);
 	return (
-		<View style={{ ...styles.default, left: width / 2 - widthMenu / 2 }}>
+		<AppView
+			style={{ ...styles.default, left: width / 2 - widthMenu / 2 }}
+			backgroundColor={colorTheme}
+		>
 			<Link href="/" asChild style={styles.link}>
 				<TouchableOpacity activeOpacity={0.5}>
 					<Feather name="home" size={24} color="white" />
 				</TouchableOpacity>
 			</Link>
-			<Link href="/" asChild style={styles.link}>
+			<Link href="/favorites" asChild style={styles.link}>
 				<TouchableOpacity activeOpacity={0.5}>
 					<MaterialIcons name="favorite-outline" size={24} color="white" />
 				</TouchableOpacity>
 			</Link>
-			<Link href="/" asChild style={styles.link}>
+			<Link href="/profile" asChild style={styles.link}>
 				<TouchableOpacity activeOpacity={0.5}>
 					<Feather name="user" size={24} color="white" />
 				</TouchableOpacity>
 			</Link>
-		</View>
+		</AppView>
 	);
 };
 
@@ -36,7 +41,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		height: 65,
 		width: widthMenu,
-		backgroundColor: THEME.MAIN_COLOR,
 		borderRadius: 32,
 		justifyContent: 'space-evenly',
 		alignItems: 'center',

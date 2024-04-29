@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e92b4118-62e6-4902-80f4-f681ea94ff8b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chapter/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chapter/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/detail/type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/favorites/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/favorites/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/actions/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/categorySlice.slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/chapterState.slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/createdAtSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/dataSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/getStatisticsMangaSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/randomMangaSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/relevanceMangaSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/topMangaSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/updatedAtSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/user/user.slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/store/slices/user/user.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entities/CardTopManga/CardTopManga.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entities/PopularManga/PopularManga.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/addFavorites/addFavorites.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/BlockMangas/BlockMangas.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/BlockPopular/BlockPopular.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/Sector/Sector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/Sector/Sector.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/types/Manga.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/types/MangaList.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/types/getChapterManga.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/types/getStatisticsManga.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/types/randomManga.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/types/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/ui/AppInput/AppInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/ui/AppTexts/AppText.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/ui/AppView/AppView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/ui/CategoryButton/CategoryButton.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/ui/Wrapper/Wrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/utils/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/widgets/Modals/ModalChangeColor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/widgets/PopUp/PopUP.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/detail/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/detail/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/detail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/detail/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/listMangas/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/listMangas/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/listMangas/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/listMangas/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/testImages/ComingSoon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/testImages/ComingSoon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/testImages/ComingSoon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/testImages/MostPopular1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/testImages/MostPopular2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/testImages/RecentRelease1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/testImages/RecentRelease2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/testImages/RecentRelease3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/Chapter/Chapter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/entities/Chapter/Chapter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/Header/user.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/Loader/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Loader/Loader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/Titles/SectorTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Titles/SectorTitle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/api/tokens.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/api/tokens.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/ui/CategoryButton/CategoryButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/ui/CategoryButton/CategoryButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/ui/Menu/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/ui/Menu/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/Category/Category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/Category/Category.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/HUD/HUD.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/HUD/HUD.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/headers/HeaderList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/headers/Header.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Bifiku"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1eff3a41-7e7d-43ca-9ac5-e6bc96ae81ca" />
+        <option name="url" value="https://github.com/Bifiku/manga-app.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2bXk0oamlcyvzGMQl4TFm1eJce5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;eslint.code.style.apply.dismiss&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;LET&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/andrey/Documents/Projects/mangaapp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/andrey/Documents/Projects/mangaapp/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.26476577&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/andrey/Documents/Projects/mangaapp/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/store/slices/user" />
+      <recent name="$PROJECT_DIR$/features/addFavorites" />
+      <recent name="$PROJECT_DIR$/widgets" />
+      <recent name="$PROJECT_DIR$/shared/ui" />
+      <recent name="$PROJECT_DIR$/shared" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e92b4118-62e6-4902-80f4-f681ea94ff8b" name="Changes" comment="" />
+      <created>1706368591767</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706368591767</updated>
+      <workItem from="1706368593595" duration="5000" />
+      <workItem from="1706368606174" duration="18317000" />
+      <workItem from="1706469434567" duration="671000" />
+      <workItem from="1706544909030" duration="70000" />
+      <workItem from="1706641317310" duration="4320000" />
+      <workItem from="1706695420358" duration="959000" />
+      <workItem from="1706712698710" duration="4491000" />
+      <workItem from="1706739855407" duration="7845000" />
+      <workItem from="1706750550431" duration="274000" />
+      <workItem from="1706775401252" duration="1417000" />
+      <workItem from="1706776863646" duration="27443000" />
+      <workItem from="1706870521877" duration="13511000" />
+      <workItem from="1706979864698" duration="4929000" />
+      <workItem from="1706990112866" duration="17555000" />
+      <workItem from="1707081457899" duration="3277000" />
+      <workItem from="1707111583183" duration="1735000" />
+      <workItem from="1707124764553" duration="8947000" />
+      <workItem from="1707197418448" duration="1416000" />
+      <workItem from="1707256172075" duration="5005000" />
+      <workItem from="1707315518363" duration="14931000" />
+      <workItem from="1707391847059" duration="1278000" />
+      <workItem from="1707465754108" duration="21000" />
+      <workItem from="1707465824638" duration="1589000" />
+      <workItem from="1707504779626" duration="8255000" />
+      <workItem from="1707546624506" duration="4452000" />
+      <workItem from="1707637266304" duration="1344000" />
+      <workItem from="1707775980784" duration="8672000" />
+      <workItem from="1707824077735" duration="3037000" />
+      <workItem from="1707911466486" duration="14653000" />
+      <workItem from="1707986104082" duration="2123000" />
+      <workItem from="1707992802664" duration="5256000" />
+      <workItem from="1708074978101" duration="26361000" />
+      <workItem from="1708165750766" duration="2044000" />
+      <workItem from="1708183890136" duration="21358000" />
+      <workItem from="1708257249634" duration="14502000" />
+      <workItem from="1708334628019" duration="5252000" />
+      <workItem from="1708437553459" duration="22713000" />
+      <workItem from="1708601467277" duration="80000" />
+      <workItem from="1708970353092" duration="6622000" />
+      <workItem from="1709020853144" duration="18952000" />
+      <workItem from="1709105908274" duration="40860000" />
+      <workItem from="1709201507106" duration="13971000" />
+      <workItem from="1709280940875" duration="1336000" />
+      <workItem from="1709569109973" duration="704000" />
+      <workItem from="1709818824327" duration="230000" />
+      <workItem from="1709819188298" duration="16000" />
+      <workItem from="1709819205488" duration="54000" />
+      <workItem from="1709819474080" duration="60907000" />
+      <workItem from="1711678562853" duration="16822000" />
+      <workItem from="1712063345009" duration="55000" />
+      <workItem from="1712252893375" duration="182056000" />
+      <workItem from="1713030030971" duration="73451000" />
+      <workItem from="1713914691919" duration="1135000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

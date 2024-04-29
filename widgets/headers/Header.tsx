@@ -6,7 +6,7 @@ import { useRouter } from 'expo-router';
 import { useAppSelector } from '../../app/hooks/hooks';
 import Loader from '../../shared/Loader/Loader';
 
-const HeaderList = () => {
+const Header = ({ title, searchEnabled = false }: { title: string; searchEnabled?: boolean }) => {
 	const { loading } = useAppSelector((state) => state.categorySlice);
 	const router = useRouter();
 
@@ -22,20 +22,28 @@ const HeaderList = () => {
 			</TouchableOpacity>
 			<View style={{ position: 'relative' }}>
 				<AppText fontSize={24} fontFamily="Oswald-Bold" style={styles.title}>
-					Manga List
+					{title}
 				</AppText>
 				{loading && (
-					<Loader size="small" style={{ flex: 0, position: 'absolute', right: -30, top: 10 }} />
+					<Loader
+						size="small"
+						style={{
+							flex: 0,
+							position: 'absolute',
+							right: -30,
+							top: 10,
+						}}
+					/>
 				)}
 			</View>
-			<TouchableOpacity onPress={router.back}>
+			<TouchableOpacity onPress={router.back} style={{ opacity: searchEnabled ? 1 : 0 }}>
 				<AntDesign name="search1" size={24} style={styles.icon} />
 			</TouchableOpacity>
 		</View>
 	);
 };
 
-export default HeaderList;
+export default Header;
 
 const styles = StyleSheet.create({
 	icons: {

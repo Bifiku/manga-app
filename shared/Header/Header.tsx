@@ -1,24 +1,39 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { DIMENSIONS, THEME } from '../theme';
-import { SvgUri } from 'react-native-svg';
 import { AppText } from '../ui/AppTexts/AppText';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { IStyleProps } from '../types/types';
+import { useAppSelector } from '../../app/hooks/hooks';
+import { Image } from 'expo-image';
+import { Link } from 'expo-router';
+import AppView from '../ui/AppView/AppView';
 export const Header = ({ style }: IStyleProps) => {
+	const { name, colorTheme } = useAppSelector((state) => state.userSlice);
 	return (
 		<View style={{ ...styles.default, ...style }}>
-			<View style={styles.profileInfo}>
-				<View style={styles.avatar}>
-					<SvgUri uri="https://res.cloudinary.com/dzdicfypl/image/upload/v1706831542/avatars/user.svg" />
-				</View>
-				<View>
-					<AppText style={styles.greeting}>Good Morning</AppText>
-					<AppText style={styles.name} fontFamily="Poppins-Bold">
-						Гость
-					</AppText>
-				</View>
-			</View>
+			<Link href="/profile" asChild style={styles.link}>
+				<TouchableOpacity>
+					<View style={styles.profileInfo}>
+						<AppView style={styles.avatar} backgroundColor={colorTheme}>
+							<Image
+								style={styles.placeHolder}
+								contentFit="cover"
+								placeholderContentFit="cover"
+								placeholder={require('../../assets/icons/avatar.svg')}
+							/>
+						</AppView>
+
+						<View>
+							<AppText style={styles.greeting}>Good Morning</AppText>
+							<AppText style={styles.name} fontFamily="Poppins-Bold" color={colorTheme}>
+								{name}
+							</AppText>
+						</View>
+					</View>
+				</TouchableOpacity>
+			</Link>
+
 			<View style={styles.icons}>
 				<AntDesign name="search1" size={24} style={styles.icon} />
 				<Ionicons name="notifications-outline" size={24} style={styles.icon} />
@@ -42,11 +57,12 @@ const styles = StyleSheet.create({
 	},
 	avatar: {
 		borderRadius: 100,
-		backgroundColor: THEME.MAIN_COLOR,
 		width: 40,
 		height: 40,
 		alignItems: 'center',
 		justifyContent: 'center',
+		overflow: 'hidden',
+		padding: 5,
 	},
 	greeting: {
 		fontSize: 12,
@@ -54,7 +70,6 @@ const styles = StyleSheet.create({
 		opacity: 0.75,
 	},
 	name: {
-		color: THEME.MAIN_COLOR,
 		fontSize: 16,
 	},
 	icons: {
@@ -66,5 +81,13 @@ const styles = StyleSheet.create({
 	icon: {
 		color: THEME.TEXT_COLOR,
 		opacity: 0.75,
+	},
+	placeHolder: {
+		width: '100%',
+		height: '100%',
+	},
+	link: {
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 });

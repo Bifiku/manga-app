@@ -5,10 +5,11 @@ import { DataChapterManga } from '../../shared/types/getChapterManga.type';
 import Loader from '../../shared/Loader/Loader';
 import CardManga from '../../entities/CardManga/CardManga';
 import Category from '../../widgets/Category/Category';
-import { DIMENSIONS } from '../../shared/theme';
+import { DIMENSIONS, THEME } from '../../shared/theme';
 import { useAppDispatch, useAppSelector } from '../hooks/hooks';
 import { AxiosError } from 'axios';
 import { setLoading } from '../store/slices/categorySlice.slice';
+import { AppText } from '../../shared/ui/AppTexts/AppText';
 
 type UploadType = {
 	limit: number;
@@ -22,27 +23,23 @@ const initialUpload = {
 };
 
 const Index = () => {
-	const { order, status, year, contentRating, loading } = useAppSelector(
-		(state) => state.categorySlice,
-	);
-	const dispatch = useAppDispatch();
+	const { favorites } = useAppSelector((state) => state.userSlice);
 	const [responseData, setResponseData] = useState<DataChapterManga[] | []>([]);
 	const [upload, setUpload] = useState<UploadType>(initialUpload);
+	const [loading, setLoading] = useState(false);
 	const getDataHandler = () => {
+		if (favorites.length === 0) return null;
 		try {
-			dispatch(setLoading(true));
+			setLoading(true);
 			const getData = async () => {
 				const response = await getDataManga({
 					url: '/manga',
 					params: {
 						includes: ['cover_art'],
-						order: order,
-						contentRating: contentRating,
-						status: status,
-						hasAvailableChapters: 'true',
 						availableTranslatedLanguage: ['ru'],
 						limit: upload.limit,
 						offset: upload.offset,
+						ids: favorites,
 					},
 				});
 				if (responseData) {
@@ -58,17 +55,17 @@ const Index = () => {
 			}
 		} finally {
 			setTimeout(() => {
-				dispatch(setLoading(false));
+				setLoading(false);
 			}, 500);
 		}
 	};
 	useEffect(() => {
 		getDataHandler();
-	}, [upload, order, contentRating, status]);
+	}, [upload, favorites]);
 
 	useEffect(() => {
 		setResponseData([]);
-	}, [order, contentRating, status]);
+	}, [favorites]);
 
 	const mangaUpload = () => {
 		setUpload((prevState) => ({
@@ -82,11 +79,10 @@ const Index = () => {
 		return <CardManga item={item} style={styles.item} />;
 	};
 	return (
-		<View>
-			<View style={styles.containerCategory}>
-				<Category style={styles.category} />
-			</View>
-			<View style={styles.container}>
+		<View style={styles.container}>
+			{favorites.length === 0 ? (
+				<AppText color={THEME.TEXT_COLOR}>Your favourites list is empty</AppText>
+			) : (
 				<FlatList
 					showsVerticalScrollIndicator={false}
 					contentContainerStyle={styles.contentContainer}
@@ -104,7 +100,7 @@ const Index = () => {
 					onEndReachedThreshold={0.5}
 					keyExtractor={(item, index) => `${item.id.toString()}/${index.toString()}`}
 				/>
-			</View>
+			)}
 		</View>
 	);
 };
@@ -113,15 +109,11 @@ export default Index;
 
 const styles = StyleSheet.create({
 	container: {
+		flex: 1,
 		alignItems: 'center',
 	},
 	contentContainer: {
 		gap: 5,
-	},
-	containerCategory: {
-		zIndex: 999,
-		padding: DIMENSIONS.padding,
-		paddingBottom: 28,
 	},
 	item: {
 		marginVertical: 8, // Отступ между карточками
@@ -130,9 +122,5 @@ const styles = StyleSheet.create({
 		height: 200 * 1.2,
 		alignItems: 'center', // Центрируем содержимое по горизонтали
 		marginBottom: 0,
-	},
-	category: {
-		width: '120%',
-		position: 'absolute',
 	},
 });
