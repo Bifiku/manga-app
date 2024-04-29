@@ -62,7 +62,6 @@
       <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entities/CardManga/CardManga.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/entities/CardManga/CardManga.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entities/CardTopManga/CardTopManga.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/entities/CardTopManga/CardTopManga.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/Chapter/Chapter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/entities/Chapter/Chapter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entities/PopularManga/PopularManga.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/entities/PopularManga/PopularManga.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/addFavorites/addFavorites.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/addFavorites/addFavorites.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />

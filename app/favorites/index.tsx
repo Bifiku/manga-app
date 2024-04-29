@@ -23,7 +23,7 @@ const initialUpload = {
 };
 
 const Index = () => {
-	const { user } = useAppSelector((state) => state.userSlice);
+	const { user, language } = useAppSelector((state) => state.userSlice);
 	const [responseData, setResponseData] = useState<DataChapterManga[] | []>([]);
 	const [upload, setUpload] = useState<UploadType>(initialUpload);
 	const [loading, setLoading] = useState(false);
@@ -38,7 +38,7 @@ const Index = () => {
 					url: '/manga',
 					params: {
 						includes: ['cover_art'],
-						availableTranslatedLanguage: ['ru'],
+						availableTranslatedLanguage: language,
 						limit: upload.limit,
 						offset: upload.offset,
 						ids: user.favorites,

@@ -1,1 +1,1 @@
-export const API: string = 'https://api.mangadex.dev';
+export const API: string = 'https://api.mangadex.org';

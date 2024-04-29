@@ -27,7 +27,7 @@ const Index = () => {
 	const { data: relevanceMangas } = useAppSelector((state) => state.relevanceMangaSlice);
 	const { data: updatedAt } = useAppSelector((state) => state.updatedAtSlice);
 	const { data: createdAt } = useAppSelector((state) => state.createdAtSlice);
-	const { user } = useAppSelector((state) => state.userSlice);
+	const { user, language } = useAppSelector((state) => state.userSlice);
 
 	useEffect(() => {
 		const userDataHandler = async () => {
@@ -51,7 +51,7 @@ const Index = () => {
 							includes: ['cover_art'],
 							order: { rating: 'desc' },
 							hasAvailableChapters: 1,
-							availableTranslatedLanguage: ['ru'],
+							availableTranslatedLanguage: language,
 						},
 					}),
 				),
@@ -63,7 +63,7 @@ const Index = () => {
 							includes: ['cover_art'],
 							order: { relevance: 'desc' },
 							hasAvailableChapters: 1,
-							availableTranslatedLanguage: ['ru'],
+							availableTranslatedLanguage: language,
 						},
 					}),
 				),
@@ -75,7 +75,7 @@ const Index = () => {
 							includes: ['cover_art'],
 							order: { updatedAt: 'desc' },
 							hasAvailableChapters: 1,
-							availableTranslatedLanguage: ['ru'],
+							availableTranslatedLanguage: language,
 						},
 					}),
 				),
@@ -87,7 +87,7 @@ const Index = () => {
 							includes: ['cover_art'],
 							order: { createdAt: 'desc' },
 							hasAvailableChapters: 1,
-							availableTranslatedLanguage: ['ru'],
+							availableTranslatedLanguage: language,
 						},
 					}),
 				),

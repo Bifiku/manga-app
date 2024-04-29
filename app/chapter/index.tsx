@@ -81,7 +81,7 @@ const Index = () => {
 				</Pressable>
 				<View style={{ alignItems: 'flex-end' }}>
 					<AppText fontSize={16}>Chapter: {chapter}</AppText>
-					<AppText fontSize={16}>{title ? title : 'Нет названия'}</AppText>
+					<AppText fontSize={16}>{title ? title : 'There`s no title'}</AppText>
 				</View>
 			</View>
 			<GestureHandlerRootView style={styles.container}>

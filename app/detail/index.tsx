@@ -18,7 +18,7 @@ import Hud from '../../widgets/HUD/HUD';
 const DetailPage = () => {
 	const { height, width } = useWindowDimensions();
 	const { contentRating } = useAppSelector((state) => state.categorySlice);
-	const { user } = useAppSelector((state) => state.userSlice);
+	const { user, language } = useAppSelector((state) => state.userSlice);
 	const { id, image } = useLocalSearchParams<{ id: string; image: string }>();
 	const [manga, setManga] = useState<MangaType | null>(null);
 	const [rating, setRating] = useState<number | null>(null);
@@ -58,7 +58,7 @@ const DetailPage = () => {
 			const getChaptersManga = async (id: string) => {
 				const responseChapters = await axios.get<ResponseChapterManga>(`${API}/manga/${id}/feed`, {
 					params: {
-						translatedLanguage: ['ru'],
+						translatedLanguage: language,
 						order: { volume: 'asc', chapter: 'asc' },
 						limit: 500,
 						contentRating: contentRating,

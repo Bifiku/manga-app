@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { UserDataType } from './user.type';
 import { THEME } from '../../../../shared/theme';
-import { srgb } from '@cloudinary/url-gen/qualifiers/colorSpace';
 
 const initialState: UserDataType = {
 	user: {
@@ -9,7 +8,7 @@ const initialState: UserDataType = {
 		name: 'Ghost',
 		colorTheme: THEME.MAIN_COLOR,
 	},
-	language: ['eng'],
+	language: ['en'],
 };
 
 const userSlice = createSlice({

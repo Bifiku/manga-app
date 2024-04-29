@@ -22,9 +22,8 @@ const initialUpload = {
 };
 
 const Index = () => {
-	const { order, status, year, contentRating, loading } = useAppSelector(
-		(state) => state.categorySlice,
-	);
+	const { order, status, contentRating, loading } = useAppSelector((state) => state.categorySlice);
+	const { language } = useAppSelector((state) => state.userSlice);
 	const dispatch = useAppDispatch();
 	const [responseData, setResponseData] = useState<DataChapterManga[] | []>([]);
 	const [upload, setUpload] = useState<UploadType>(initialUpload);
@@ -40,7 +39,7 @@ const Index = () => {
 						contentRating: contentRating,
 						status: status,
 						hasAvailableChapters: 'true',
-						availableTranslatedLanguage: ['ru'],
+						availableTranslatedLanguage: language,
 						limit: upload.limit,
 						offset: upload.offset,
 					},
