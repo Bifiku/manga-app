@@ -9,11 +9,11 @@ const widthMenu = 300;
 
 export const Menu = () => {
 	const { width } = useWindowDimensions();
-	const { colorTheme } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
 	return (
 		<AppView
 			style={{ ...styles.default, left: width / 2 - widthMenu / 2 }}
-			backgroundColor={colorTheme}
+			backgroundColor={user.colorTheme}
 		>
 			<Link href="/" asChild style={styles.link}>
 				<TouchableOpacity activeOpacity={0.5}>

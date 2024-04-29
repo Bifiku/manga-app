@@ -21,7 +21,7 @@ const CategoryButton = ({
 	resetTitleHandler,
 	resetState = false,
 }: ICategoryButton) => {
-	const { colorTheme } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
 	const { order } = useAppSelector((state) => state.categorySlice);
 	const dispatch = useAppDispatch();
 	const [pressing, setPressing] = useState<boolean>(false);
@@ -80,7 +80,7 @@ const CategoryButton = ({
 			transition={{ type: 'spring', damping: 10, stiffness: 65 }}
 		>
 			<MotiView
-				style={{ ...styles.content, backgroundColor: colorTheme }}
+				style={{ ...styles.content, backgroundColor: user.colorTheme }}
 				animate={{
 					height: !pressing ? 37 : viewSize.height + 35,
 				}}
@@ -94,7 +94,7 @@ const CategoryButton = ({
 					style={{
 						...styles.defaultContent,
 						borderBottomWidth: pressing ? 1 : 0,
-						backgroundColor: colorTheme,
+						backgroundColor: user.colorTheme,
 					}}
 					onPress={handlePressing}
 					activeOpacity={0.7}

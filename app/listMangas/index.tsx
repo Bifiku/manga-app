@@ -1,6 +1,6 @@
 import { Dimensions, FlatList, RefreshControl, StyleSheet, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import { getDataManga } from '../../shared/utils/utils';
+import { getDataManga } from '../../shared/lib/utils/utils';
 import { DataChapterManga } from '../../shared/types/getChapterManga.type';
 import Loader from '../../shared/Loader/Loader';
 import CardManga from '../../entities/CardManga/CardManga';

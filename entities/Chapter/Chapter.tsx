@@ -16,7 +16,7 @@ const Chapter = ({ item, image }: { item: DataChapterManga; image: string | unde
 		chapter: item.attributes.chapter,
 		title: item.attributes.title,
 	};
-	const { colorTheme } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
 
 	return (
 		<Link
@@ -27,7 +27,7 @@ const Chapter = ({ item, image }: { item: DataChapterManga; image: string | unde
 			asChild
 		>
 			<TouchableOpacity key={item.id}>
-				<Wrapper borderColor={colorTheme}>
+				<Wrapper borderColor={user.colorTheme}>
 					<View style={styles.chapterWrapper}>
 						{image ? (
 							<Image style={styles.chapterImage} source={{ uri: image }} cachePolicy="none" />
@@ -46,7 +46,7 @@ const Chapter = ({ item, image }: { item: DataChapterManga; image: string | unde
 							</AppText>
 						</View>
 					</View>
-					<AppView style={styles.point} borderColor={colorTheme} />
+					<AppView style={styles.point} borderColor={user.colorTheme} />
 				</Wrapper>
 			</TouchableOpacity>
 		</Link>

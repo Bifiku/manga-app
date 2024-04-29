@@ -4,7 +4,7 @@ import { initState } from '../../shared/types/types';
 import { Datum, MangaList } from '../../shared/types/MangaList.type';
 import CardTopManga from '../CardTopManga/CardTopManga';
 import { useEffect, useState } from 'react';
-import { filterMangaByLanguage } from '../../shared/utils/utils';
+import { filterMangaByLanguage } from '../../shared/lib/utils/utils';
 
 const PopularManga = () => {
 	const { data: mangaPopular } = useAppSelector<initState<MangaList>>(

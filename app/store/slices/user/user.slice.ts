@@ -1,11 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserType } from './user.type';
+import { UserDataType } from './user.type';
 import { THEME } from '../../../../shared/theme';
 
-const initialState: UserType = {
-	favorites: [],
-	name: 'Ghost',
-	colorTheme: THEME.MAIN_COLOR,
+const initialState: UserDataType = {
+	user: {
+		favorites: [],
+		name: 'Ghost',
+		colorTheme: THEME.MAIN_COLOR,
+	},
+	language: ['eng'],
 };
 
 const userSlice = createSlice({
@@ -13,18 +16,18 @@ const userSlice = createSlice({
 	initialState,
 	reducers: {
 		changeFavorites(state, { payload }: { payload: string }) {
-			const checkedId = state.favorites.find((i: string) => i === payload);
+			const checkedId = state.user.favorites.find((i: string) => i === payload);
 			if (checkedId) {
-				state.favorites = state.favorites.filter((i) => i !== payload);
+				state.user.favorites = state.user.favorites.filter((i) => i !== payload);
 			} else {
-				state.favorites.push(payload);
+				state.user.favorites.push(payload);
 			}
 		},
 		changeColorTheme(state, { payload }: { payload: string }) {
-			state.colorTheme = payload;
+			state.user.colorTheme = payload;
 		},
 		changeName(state, { payload }: { payload: string }) {
-			state.name = payload;
+			state.user.name = payload;
 		},
 	},
 });

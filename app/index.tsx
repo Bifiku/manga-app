@@ -14,6 +14,10 @@ import {
 	updatedAt as lastUpdate,
 	createdAt as newManga,
 } from './store/slices/categorySlice.slice';
+import { getUserData, x } from '../shared/lib/utils/getAndLoadUserData';
+import { UserType } from './store/slices/user/user.type';
+import { changeColorTheme } from './store/slices/user/user.slice';
+import { THEME } from '../shared/theme';
 const Index = () => {
 	const insets = useSafeAreaInsets();
 	const [refreshing, setRefreshing] = useState(false);
@@ -23,7 +27,16 @@ const Index = () => {
 	const { data: relevanceMangas } = useAppSelector((state) => state.relevanceMangaSlice);
 	const { data: updatedAt } = useAppSelector((state) => state.updatedAtSlice);
 	const { data: createdAt } = useAppSelector((state) => state.createdAtSlice);
-	const { name, favorites, colorTheme } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
+
+	useEffect(() => {
+		const userDataHandler = async () => {
+			const userData: UserType = await getUserData();
+			dispatch(changeColorTheme(userData.colorTheme ? userData.colorTheme : THEME.MAIN_COLOR));
+		};
+		userDataHandler();
+	}, []);
+
 	const fetchDataAndUpdate = async () => {
 		try {
 			setRefreshing(true);
@@ -122,7 +135,7 @@ const Index = () => {
 						refreshControl={
 							<RefreshControl
 								refreshing={refreshing}
-								tintColor={colorTheme}
+								tintColor={user.colorTheme}
 								onRefresh={fetchDataAndUpdate}
 							/>
 						}

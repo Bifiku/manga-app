@@ -18,7 +18,7 @@ import Hud from '../../widgets/HUD/HUD';
 const DetailPage = () => {
 	const { height, width } = useWindowDimensions();
 	const { contentRating } = useAppSelector((state) => state.categorySlice);
-	const { colorTheme } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
 	const { id, image } = useLocalSearchParams<{ id: string; image: string }>();
 	const [manga, setManga] = useState<MangaType | null>(null);
 	const [rating, setRating] = useState<number | null>(null);
@@ -139,7 +139,7 @@ const DetailPage = () => {
 					</View>
 					<TouchableOpacity
 						activeOpacity={0.8}
-						style={{ ...styles.arrowButton, backgroundColor: colorTheme }}
+						style={{ ...styles.arrowButton, backgroundColor: user.colorTheme }}
 						onPress={visibleFullInfo}
 					>
 						<MotiView

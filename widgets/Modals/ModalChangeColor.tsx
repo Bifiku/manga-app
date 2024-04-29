@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks/hooks';
 import { changeColorTheme } from '../../app/store/slices/user/user.slice';
 import { DIMENSIONS, THEME } from '../../shared/theme';
 import { AntDesign } from '@expo/vector-icons';
+import { getUserData, setUserData } from '../../shared/lib/utils/getAndLoadUserData';
 
 interface IModalChangeColor {
 	visible: boolean;
@@ -13,18 +14,23 @@ interface IModalChangeColor {
 }
 
 const ModalChangeColor = ({ visible, onVisible }: IModalChangeColor) => {
-	const { colorTheme } = useAppSelector((state) => state.userSlice);
-	const [color, setColor] = useState<string>(colorTheme);
+	const { user } = useAppSelector((state) => state.userSlice);
+	const [color, setColor] = useState<string>(user.colorTheme);
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		dispatch(changeColorTheme(color));
+		setUserData({ ...user, colorTheme: color });
 	}, [dispatch, color]);
 
 	const resetAndClose = () => {
 		setColor(THEME.MAIN_COLOR);
 		onVisible(false);
 	};
+
+	useEffect(() => {
+		getUserData();
+	}, [color]);
 	return (
 		<Modal
 			animationType="slide"
@@ -54,13 +60,13 @@ const ModalChangeColor = ({ visible, onVisible }: IModalChangeColor) => {
 				<View style={styles.buttons}>
 					<TouchableOpacity
 						onPress={() => resetAndClose()}
-						style={{ ...styles.button, borderColor: colorTheme }}
+						style={{ ...styles.button, borderColor: user.colorTheme }}
 					>
 						<AppText fontSize={18}>Reset</AppText>
 					</TouchableOpacity>
 					<TouchableOpacity
 						onPress={() => onVisible(false)}
-						style={{ ...styles.button, borderColor: colorTheme }}
+						style={{ ...styles.button, borderColor: user.colorTheme }}
 					>
 						<AppText fontSize={18}>Save</AppText>
 					</TouchableOpacity>

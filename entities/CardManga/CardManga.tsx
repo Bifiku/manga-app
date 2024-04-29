@@ -1,6 +1,6 @@
 import { View, StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
 import { AppText } from '../../shared/ui/AppTexts/AppText';
-import { getImageUrl, truncateText } from '../../shared/utils/utils';
+import { getImageUrl, truncateText } from '../../shared/lib/utils/utils';
 import React, { useEffect, useState } from 'react';
 import { THEME } from '../../shared/theme';
 import { Link } from 'expo-router';

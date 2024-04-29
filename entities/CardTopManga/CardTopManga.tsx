@@ -1,6 +1,6 @@
 import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { AppText } from '../../shared/ui/AppTexts/AppText';
-import { getImageUrl, truncateText } from '../../shared/utils/utils';
+import { getImageUrl, truncateText } from '../../shared/lib/utils/utils';
 import { AntDesign } from '@expo/vector-icons';
 import { ImageBackground } from 'expo-image';
 import { THEME } from '../../shared/theme';

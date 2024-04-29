@@ -1,14 +1,12 @@
 import { Dimensions, FlatList, RefreshControl, StyleSheet, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import { getDataManga } from '../../shared/utils/utils';
+import { getDataManga } from '../../shared/lib/utils/utils';
 import { DataChapterManga } from '../../shared/types/getChapterManga.type';
 import Loader from '../../shared/Loader/Loader';
 import CardManga from '../../entities/CardManga/CardManga';
-import Category from '../../widgets/Category/Category';
-import { DIMENSIONS, THEME } from '../../shared/theme';
-import { useAppDispatch, useAppSelector } from '../hooks/hooks';
+import { THEME } from '../../shared/theme';
+import { useAppSelector } from '../hooks/hooks';
 import { AxiosError } from 'axios';
-import { setLoading } from '../store/slices/categorySlice.slice';
 import { AppText } from '../../shared/ui/AppTexts/AppText';
 
 type UploadType = {
@@ -23,12 +21,12 @@ const initialUpload = {
 };
 
 const Index = () => {
-	const { favorites } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
 	const [responseData, setResponseData] = useState<DataChapterManga[] | []>([]);
 	const [upload, setUpload] = useState<UploadType>(initialUpload);
 	const [loading, setLoading] = useState(false);
 	const getDataHandler = () => {
-		if (favorites.length === 0) return null;
+		if (user.favorites.length === 0) return null;
 		try {
 			setLoading(true);
 			const getData = async () => {
@@ -39,7 +37,8 @@ const Index = () => {
 						availableTranslatedLanguage: ['ru'],
 						limit: upload.limit,
 						offset: upload.offset,
-						ids: favorites,
+						ids: user.favorites,
+						contentRating: ['safe', 'suggestive', 'erotica', 'pornographic'],
 					},
 				});
 				if (responseData) {
@@ -61,11 +60,11 @@ const Index = () => {
 	};
 	useEffect(() => {
 		getDataHandler();
-	}, [upload, favorites]);
+	}, [upload, user.favorites]);
 
 	useEffect(() => {
 		setResponseData([]);
-	}, [favorites]);
+	}, [user.favorites]);
 
 	const mangaUpload = () => {
 		setUpload((prevState) => ({
@@ -80,7 +79,7 @@ const Index = () => {
 	};
 	return (
 		<View style={styles.container}>
-			{favorites.length === 0 ? (
+			{user.favorites.length === 0 ? (
 				<AppText color={THEME.TEXT_COLOR}>Your favourites list is empty</AppText>
 			) : (
 				<FlatList

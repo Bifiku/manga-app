@@ -10,16 +10,15 @@ import { useEffect, useState } from 'react';
 import AppView from '../../shared/ui/AppView/AppView';
 import ModalChangeColor from '../../widgets/Modals/ModalChangeColor';
 import { changeName } from '../store/slices/user/user.slice';
-import { MotiView } from 'moti';
 import PopUp from '../../widgets/PopUp/PopUP';
 
 const Index = () => {
-	const { name, colorTheme } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
 	const dispatch = useAppDispatch();
 	const [notificationValue, setNotificationValue] = useState(false);
 	const [isError, setIsError] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
-	const [userName, setUserName] = useState(name);
+	const [userName, setUserName] = useState(user.name);
 
 	useEffect(() => {
 		dispatch(changeName(userName));
@@ -38,9 +37,9 @@ const Index = () => {
 		<View style={styles.container}>
 			<ModalChangeColor visible={modalVisible} onVisible={setModalVisible} />
 			<PopUp isError={isError} />
-			<Wrapper style={styles.wrapper} borderColor={colorTheme}>
+			<Wrapper style={styles.wrapper} borderColor={user.colorTheme}>
 				<TouchableOpacity onPress={isErrorHandler} disabled={isError}>
-					<View style={{ ...styles.avatar, borderColor: colorTheme }}>
+					<View style={{ ...styles.avatar, borderColor: user.colorTheme }}>
 						<Image
 							style={styles.placeHolder}
 							contentFit="cover"
@@ -54,30 +53,34 @@ const Index = () => {
 					<AppText style={styles.text}>Your name</AppText>
 					<TextInput
 						value={userName}
-						style={{ ...styles.name, color: colorTheme }}
-						cursorColor={colorTheme}
+						style={{ ...styles.name, color: user.colorTheme }}
+						cursorColor={user.colorTheme}
 						onChangeText={(e) => setUserName(e)}
 					/>
 				</View>
 			</Wrapper>
 			<TouchableOpacity activeOpacity={0.7} onPress={isErrorHandler} disabled={isError}>
-				<Wrapper style={styles.wrapperOption} borderColor={colorTheme}>
+				<Wrapper style={styles.wrapperOption} borderColor={user.colorTheme}>
 					<AppText style={styles.text}>Language:</AppText>
-					<Wrapper style={styles.wrapperLang} borderColor={colorTheme}>
+					<Wrapper style={styles.wrapperLang} borderColor={user.colorTheme}>
 						<AppText style={styles.text}>ENG</AppText>
 					</Wrapper>
 				</Wrapper>
 			</TouchableOpacity>
 			<TouchableOpacity onPress={() => setModalVisible(true)} activeOpacity={0.7}>
-				<Wrapper style={styles.wrapperOption} borderColor={colorTheme}>
+				<Wrapper style={styles.wrapperOption} borderColor={user.colorTheme}>
 					<AppText style={styles.text}>Theme color:</AppText>
-					<AppView style={styles.rectFill} borderColor={colorTheme} backgroundColor={colorTheme} />
+					<AppView
+						style={styles.rectFill}
+						borderColor={user.colorTheme}
+						backgroundColor={user.colorTheme}
+					/>
 				</Wrapper>
 			</TouchableOpacity>
 			<TouchableOpacity onPress={isErrorHandler} activeOpacity={0.7} disabled={isError}>
-				<Wrapper style={styles.wrapperOption} borderColor={colorTheme}>
+				<Wrapper style={styles.wrapperOption} borderColor={user.colorTheme}>
 					<AppText style={styles.text}>Notification:</AppText>
-					<AppView style={styles.checked} borderColor={colorTheme}>
+					<AppView style={styles.checked} borderColor={user.colorTheme}>
 						<Checkbox value={notificationValue} color={THEME.BACKGROUND_COLOR}>
 							<Entypo name="check" size={18} color={THEME.TEXT_COLOR} />
 						</Checkbox>
@@ -85,13 +88,13 @@ const Index = () => {
 				</Wrapper>
 			</TouchableOpacity>
 			<TouchableOpacity activeOpacity={0.7}>
-				<Wrapper style={styles.wrapperOption} borderColor={colorTheme}>
+				<Wrapper style={styles.wrapperOption} borderColor={user.colorTheme}>
 					<AppText style={styles.text}>Bags and Reports:</AppText>
 					<FontAwesome name="telegram" size={24} color={THEME.TEXT_COLOR} />
 				</Wrapper>
 			</TouchableOpacity>
 			<TouchableOpacity activeOpacity={0.7}>
-				<Wrapper style={styles.wrapperOption} borderColor={colorTheme}>
+				<Wrapper style={styles.wrapperOption} borderColor={user.colorTheme}>
 					<AppText style={styles.text}>Contacts:</AppText>
 					<FontAwesome name="telegram" size={24} color={THEME.TEXT_COLOR} />
 				</Wrapper>

@@ -6,7 +6,7 @@ import { Datum, MangaList } from '../types/MangaList.type';
 import { initState } from '../types/types';
 import { ImageBackground } from 'expo-image';
 import { AntDesign } from '@expo/vector-icons';
-import { truncateText } from '../utils/utils';
+import { truncateText } from '../lib/utils/utils';
 
 export const BlockPopular = () => {
 	const { data: mangaList } = useAppSelector<initState<MangaList>>((state) => state.topMangaSlice);

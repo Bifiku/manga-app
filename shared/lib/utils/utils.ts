@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios';
-import { API } from '../api/tokens';
+import { API } from '../../api/tokens';
 
 export function truncateText(text: string, maxLength: number) {
 	if (text?.length > maxLength) {

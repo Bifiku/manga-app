@@ -9,13 +9,13 @@ import { Image } from 'expo-image';
 import { Link } from 'expo-router';
 import AppView from '../ui/AppView/AppView';
 export const Header = ({ style }: IStyleProps) => {
-	const { name, colorTheme } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
 	return (
 		<View style={{ ...styles.default, ...style }}>
 			<Link href="/profile" asChild style={styles.link}>
 				<TouchableOpacity>
 					<View style={styles.profileInfo}>
-						<AppView style={styles.avatar} backgroundColor={colorTheme}>
+						<AppView style={styles.avatar} backgroundColor={user.colorTheme}>
 							<Image
 								style={styles.placeHolder}
 								contentFit="cover"
@@ -26,8 +26,8 @@ export const Header = ({ style }: IStyleProps) => {
 
 						<View>
 							<AppText style={styles.greeting}>Good Morning</AppText>
-							<AppText style={styles.name} fontFamily="Poppins-Bold" color={colorTheme}>
-								{name}
+							<AppText style={styles.name} fontFamily="Poppins-Bold" color={user.colorTheme}>
+								{user.name}
 							</AppText>
 						</View>
 					</View>

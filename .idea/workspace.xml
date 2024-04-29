@@ -10,9 +10,7 @@
       <change afterPath="$PROJECT_DIR$/app/chapter/index.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/detail/type.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/favorites/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/favorites/index.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/profile/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/profile/index.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/store/actions/actions.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/store/slices/categorySlice.slice.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/store/slices/chapterState.slice.ts" afterDir="false" />
@@ -23,15 +21,11 @@
       <change afterPath="$PROJECT_DIR$/app/store/slices/relevanceMangaSlice.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/store/slices/topMangaSlice.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/store/slices/updatedAtSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/store/slices/user/user.slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/store/slices/user/user.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entities/CardTopManga/CardTopManga.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entities/PopularManga/PopularManga.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/features/addFavorites/addFavorites.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/BlockMangas/BlockMangas.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/BlockPopular/BlockPopular.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/Sector/Sector.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/Sector/Sector.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/lib/utils/getAndLoadUserData.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/types/Manga.type.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/types/MangaList.type.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/types/getChapterManga.type.ts" afterDir="false" />
@@ -43,18 +37,21 @@
       <change afterPath="$PROJECT_DIR$/shared/ui/AppView/AppView.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/ui/CategoryButton/CategoryButton.type.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/ui/Wrapper/Wrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/utils/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/widgets/Modals/ModalChangeColor.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/widgets/PopUp/PopUP.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/detail/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/detail/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/detail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/detail/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/favorites/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/favorites/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/listMangas/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/listMangas/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/listMangas/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/listMangas/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/store/slices/user/user.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/slices/user/user.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/store/slices/user/user.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/slices/user/user.type.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/testImages/ComingSoon1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/testImages/ComingSoon2.png" beforeDir="false" />
@@ -65,8 +62,12 @@
       <change beforePath="$PROJECT_DIR$/assets/testImages/RecentRelease2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/testImages/RecentRelease3.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/CardManga/CardManga.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/entities/CardManga/CardManga.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/CardTopManga/CardTopManga.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/entities/CardTopManga/CardTopManga.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entities/Chapter/Chapter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/entities/Chapter/Chapter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/PopularManga/PopularManga.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/entities/PopularManga/PopularManga.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/BlockPopular/BlockPopular.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/BlockPopular/BlockPopular.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/Header/user.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/Loader/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/Loader/Loader.tsx" afterDir="false" />
@@ -74,8 +75,11 @@
       <change beforePath="$PROJECT_DIR$/shared/api/tokens.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/api/tokens.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/ui/CategoryButton/CategoryButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/ui/CategoryButton/CategoryButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/ui/Menu/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/ui/Menu/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/utils/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/lib/utils/fonts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/utils/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/lib/utils/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/Category/Category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/Category/Category.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/HUD/HUD.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/HUD/HUD.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/Modals/ModalChangeColor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/Modals/ModalChangeColor.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/headers/HeaderList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/headers/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,11 +152,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shared/lib" />
       <recent name="$PROJECT_DIR$/app/store/slices/user" />
       <recent name="$PROJECT_DIR$/features/addFavorites" />
       <recent name="$PROJECT_DIR$/widgets" />
       <recent name="$PROJECT_DIR$/shared/ui" />
-      <recent name="$PROJECT_DIR$/shared" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

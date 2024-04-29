@@ -25,7 +25,7 @@ export const SectorTitle = ({
 	updateFunc?: () => void;
 }) => {
 	const dispatch = useAppDispatch();
-	const { colorTheme } = useAppSelector((state) => state.userSlice);
+	const { user } = useAppSelector((state) => state.userSlice);
 
 	const updateOrderHandler = (title: string) => {
 		switch (title) {
@@ -57,7 +57,7 @@ export const SectorTitle = ({
 					onPress={() => updateOrderHandler(title)}
 				>
 					<TouchableOpacity>
-						<AppText style={styles.seeMore} fontFamily="Poppins-Medium" color={colorTheme}>
+						<AppText style={styles.seeMore} fontFamily="Poppins-Medium" color={user.colorTheme}>
 							See more
 						</AppText>
 					</TouchableOpacity>
@@ -65,7 +65,7 @@ export const SectorTitle = ({
 			)}
 			{update && updateFunc && (
 				<TouchableOpacity onPress={() => updateFunc()}>
-					<Ionicons name="refresh" size={24} style={{ color: colorTheme, top: -5 }} />
+					<Ionicons name="refresh" size={24} style={{ color: user.colorTheme, top: -5 }} />
 				</TouchableOpacity>
 			)}
 		</View>
