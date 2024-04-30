@@ -34,7 +34,7 @@ const Index = () => {
 			const userData: UserType = await getUserData();
 			dispatch(changeColorTheme(userData.colorTheme ? userData.colorTheme : THEME.MAIN_COLOR));
 			dispatch(changeName(userData.name));
-			dispatch(changeFavorites(userData.favorites));
+			dispatch(changeFavorites(userData.favorites ? userData.favorites : []));
 		};
 		userDataHandler();
 	}, []);

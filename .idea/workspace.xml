@@ -7,7 +7,6 @@
     <list default="true" id="e92b4118-62e6-4902-80f4-f681ea94ff8b" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/chapter/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/chapter/index.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/detail/type.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/favorites/_layout.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/profile/_layout.tsx" afterDir="false" />
@@ -35,12 +34,12 @@
       <change afterPath="$PROJECT_DIR$/shared/ui/AppView/AppView.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/ui/CategoryButton/CategoryButton.type.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shared/ui/Wrapper/Wrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/widgets/PopUp/PopUP.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chapter/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/chapter/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/detail/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/detail/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/detail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/detail/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/favorites/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/favorites/index.tsx" afterDir="false" />
@@ -80,6 +79,7 @@
       <change beforePath="$PROJECT_DIR$/widgets/Category/Category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/Category/Category.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/HUD/HUD.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/HUD/HUD.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/Modals/ModalChangeColor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/Modals/ModalChangeColor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/PopUp/PopUP.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/PopUp/PopUP.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/headers/HeaderList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/headers/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
